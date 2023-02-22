@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const pageTitle = document.title;
 
 export default () => {
   const [count, setCount] = useState(0);
 
+  useEffect(()=>{
+    if(count > 0 ){
+      document.title = `${pageTitle}-${count}`
+    }
+  })
   return (
     <>
       <h4>Button "(if else condition used)"</h4>
